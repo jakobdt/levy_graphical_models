@@ -128,6 +128,7 @@ C <- avg_no_jumps*mean(abs(X[,1])>epsilon)*epsilon^alpha*alpha
 rm(R1, X)
 
 ## Estimation of covariance matrix for small-jump approximation
+## (Takes some time to run)
 expectation <- function(U,x) {
   n <- ncol(U)
   matrix_sum <- matrix(0,nrow=d,ncol=d)
@@ -149,6 +150,7 @@ Sigma <- C*riemann_sum/length(x_seq)
 rm(R2, U)
 
 ## Estimation of drift
+## (Takes some time to run if two_sided == FALSE)
 
 if (two_sided) {
   g <- rep(0,d)

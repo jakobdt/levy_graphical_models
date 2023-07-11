@@ -12,7 +12,7 @@
 ## Function for estimating probability of recovering the tree.
 ## K is the number of simulations to base each probability estimate on,
 ## qvec is the values of q to use for the structure learning, and n is
-## the number of times the process is sampled (i.e. sampling frequency is 1/n)
+## the number of times the process is sampled (i.e. sampling frequency is 1/n).
 est_probs <- function(K, qvec, n) {
   X <- replicate(K, sim_X(n))
   d <- dim(X)[2]
@@ -39,7 +39,7 @@ for (j in 1:length(n_range)) {
 N <- length(n_range)
 layout(matrix(c(1,2),nrow=1), width=c(4,1)) 
 par(mar=c(5,4,4,0))
-matplot(q_range, results, ylim = c(0,1), type = "l", xlab = "q", ylab = "Recovery probability")
+matplot(q_range, results, ylim = c(0,1), type = "l", xlab = "q", ylab = "Recovery probability", lty = 1)
 par(mar=c(5,0,4,2))
 plot(c(0,1),type="n", axes=F, xlab="", ylab="")
 legend("right", c("200", "500", "1000", "2000", "5000"),
